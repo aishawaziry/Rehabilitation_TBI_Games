@@ -1,4 +1,4 @@
-package com.example.music_notes_player_app_setup
+package com.example.rehab_hub
 
 import io.flutter.embedding.android.FlutterActivity
 
