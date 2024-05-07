@@ -1,7 +1,7 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'package:rehab_hub/data.dart';
-import 'package:rehab_hub/flipcard.dart';
+import 'package:rehab_hub/data/MatchCards_data.dart';
+import 'package:rehab_hub/screens/MatchCards_flipcard.dart';
 // import 'data.dart';
 // import 'flipcard.dart';
 class ChooseLevel extends StatefulWidget {

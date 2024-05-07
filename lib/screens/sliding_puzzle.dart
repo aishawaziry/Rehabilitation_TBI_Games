@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'widgets/SlidingPuzzle_Board.dart';
+import '../widgets/SlidingPuzzle_Board.dart';
 
 main() async {
   WidgetsFlutterBinding.ensureInitialized();

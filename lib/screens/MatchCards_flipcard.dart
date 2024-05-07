@@ -1,6 +1,6 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'data.dart';
+import '../data/MatchCards_data.dart';
 import 'dart:async';
 
 class FlipCardGame extends StatefulWidget {

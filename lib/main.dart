@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rehab_hub/choose_level.dart';
-import 'sliding_puzzle.dart'; // Import your game files
+import 'package:rehab_hub/screens/MatchCards_choose_level.dart';
+import 'package:rehab_hub/screens/pattern_main_menu.dart';
+import 'screens/sliding_puzzle.dart'; // Import your game files
 
 void main() {
   runApp(MyApp());
@@ -14,12 +15,23 @@ class MyApp extends StatelessWidget {
       title: 'Game Hub',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        appBarTheme: AppBarTheme(
+          centerTitle: true,
+          titleTextStyle: TextStyle(
+            fontSize: 30, // Adjust the font size as needed
+            fontWeight: FontWeight.bold,
+            color: Colors.blueGrey,
+            // You can also set other text properties such as color
+          ),
+        ),
       ),
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
-        '/sliding_puzzle': (context) => SlidingPuzzle(), // Add routes for other games
-        'choose level': (context) =>  ChooseLevel(),
+        '/sliding_puzzle': (context) =>
+            SlidingPuzzle(), // Add routes for other games
+        'choose level': (context) => ChooseLevel(),
+        '/pattern_recognition': (context) => MainMenu(),
         // Add routes for other games
       },
     );
@@ -55,10 +67,20 @@ class HomePage extends StatelessWidget {
                       mainAxisSpacing: 8.0,
                       crossAxisSpacing: 8.0,
                       children: <Widget>[
-                        buildGameTile(context, 'assets/images/sliding_puzzle_image.png', 'Sliding Puzzle', '/sliding_puzzle'),
-                        buildGameTile(context, 'assets/images/memory.png', 'Match Cards', 'choose level'),
-                        buildGameTile(context, 'assets/images/sliding_puzzle_image.png', 'Game 3', '/game3'),
-                        buildGameTile(context, 'assets/images/sliding_puzzle_image.png', 'Game 4', '/game4'),
+                        buildGameTile(
+                            context,
+                            'assets/images/sliding_puzzle_image.png',
+                            'Sliding Puzzle',
+                            '/sliding_puzzle'),
+                        buildGameTile(context, 'assets/images/memory.png',
+                            'Match Cards', 'choose level'),
+                        buildGameTile(context, 'assets/images/pattern_game.jpg',
+                            'Pattern Recognition', '/pattern_recognition'),
+                        buildGameTile(
+                            context,
+                            'assets/images/sliding_puzzle_image.png',
+                            'Game 4',
+                            '/game4'),
                       ],
                     ),
                   ),
@@ -72,7 +94,8 @@ class HomePage extends StatelessWidget {
                           children: [
                             Text(
                               'Reminders',
-                              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                  fontSize: 20.0, fontWeight: FontWeight.bold),
                             ),
                             SizedBox(height: 16.0),
                             Icon(Icons.alarm, size: 48.0, color: Colors.blue),
@@ -86,10 +109,12 @@ class HomePage extends StatelessWidget {
                           children: [
                             Text(
                               'Recommendations',
-                              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                  fontSize: 20.0, fontWeight: FontWeight.bold),
                             ),
                             SizedBox(height: 16.0),
-                            Icon(Icons.thumb_up, size: 48.0, color: Colors.blue),
+                            Icon(Icons.thumb_up,
+                                size: 48.0, color: Colors.blue),
                           ],
                         ),
                       ),
@@ -104,7 +129,8 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget buildGameTile(BuildContext context, String imagePath, String title, String route) {
+  Widget buildGameTile(
+      BuildContext context, String imagePath, String title, String route) {
     return InkWell(
       onTap: () {
         Navigator.pushNamed(context, route);
