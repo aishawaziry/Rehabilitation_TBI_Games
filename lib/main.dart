@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rehab_hub/screens/MatchCards_choose_level.dart';
 import 'package:rehab_hub/screens/pattern_main_menu.dart';
+import 'package:rehab_hub/widgets/reminder_cards.dart';
 import 'screens/sliding_puzzle.dart'; // Import your game files
 
 void main() {
@@ -30,6 +31,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => HomePage(),
         '/sliding_puzzle': (context) =>
             SlidingPuzzle(), // Add routes for other games
+        'reminder': (context) => Reminder(),
+
         'choose level': (context) => ChooseLevel(),
         '/pattern_recognition': (context) => MainMenu(),
         // Add routes for other games
@@ -98,8 +101,12 @@ class HomePage extends StatelessWidget {
                                   fontSize: 20.0, fontWeight: FontWeight.bold),
                             ),
                             SizedBox(height: 16.0),
-                            Icon(Icons.alarm, size: 48.0, color: Colors.blue),
-                          ],
+IconButton( // Convert Icon to IconButton
+                                icon: Icon(Icons.alarm, size: 48.0, color: Colors.blue),
+                                onPressed: () {
+                                  Navigator.pushNamed(context, 'reminder'); // Navigate to the desired page
+                                },
+                              ),                          ],
                         ),
                       ),
                       SizedBox(width: 16.0),
