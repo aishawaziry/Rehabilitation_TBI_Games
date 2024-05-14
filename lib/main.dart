@@ -4,6 +4,7 @@ import 'package:rehab_hub/screens/pattern_main_menu.dart';
 import 'package:rehab_hub/screens/recommendation.dart';
 import 'package:rehab_hub/widgets/reminder_cards.dart';
 import 'screens/sliding_puzzle.dart'; // Import your game files
+import 'screens/Sudoku.dart';
 
 void main() {
   runApp(MyApp());
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         'choose level': (context) => ChooseLevel(),
         '/pattern_recognition': (context) => MainMenu(),
         '/recommendation': (context) => RecommendationPage(),
+        '/sudoku': (context) => Suduko(),
         // Add routes for other games
       },
     );
@@ -81,11 +83,8 @@ class HomePage extends StatelessWidget {
                             'Match Cards', 'choose level'),
                         buildGameTile(context, 'assets/images/pattern_game.jpg',
                             'Pattern Recognition', '/pattern_recognition'),
-                        buildGameTile(
-                            context,
-                            'assets/images/sliding_puzzle_image.png',
-                            'Game 4',
-                            '/game4'),
+                        buildGameTile(context,'assets/images/sudoku.jpg',
+                            'Sudoku','/sudoku'),
                       ],
                     ),
                   ),
@@ -130,7 +129,7 @@ class HomePage extends StatelessWidget {
                               icon: Icon(Icons.thumb_up,
                                   size: 48.0, color: Colors.blue),
                               onPressed: () {
-                                Navigator.pushNamed(context,'/recommendation'); // 
+                                Navigator.pushNamed(context,'/recommendation'); //
                               },
                             )
                           ],
