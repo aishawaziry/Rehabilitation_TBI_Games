@@ -30,7 +30,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
   Widget build(BuildContext context) {
     var screen_H = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: AppColor.pripmaryColor,
+      // backgroundColor: AppColor.pripmaryColor,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: screen_H * 0.02), // Adjusted padding
         child: PageView.builder(
@@ -57,13 +57,14 @@ class _QuizzScreenState extends State<QuizzScreen> {
                     "Question ${index + 1}/10",
                     textAlign: TextAlign.start,
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppColor.pripmaryColor,
+                      fontWeight: FontWeight.bold,
                       fontSize: screen_H * 0.04, // Adjusted font size
                     ),
                   ),
                 ),
                 Divider(
-                  color: Colors.white,
+                  color: AppColor.secondaryColor,
                   height: screen_H * 0.02, // Adjusted divider height
                   thickness: 1.0,
                 ),
@@ -76,7 +77,8 @@ class _QuizzScreenState extends State<QuizzScreen> {
                   child: Text(
                     "${numbers[index].question}",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppColor.pripmaryColor,
+                      fontWeight: FontWeight.bold,
                       fontSize: screen_H * 0.044, // Adjusted font size
                     ),
                   ),

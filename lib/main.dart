@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rehab_hub/screens/MatchCards_choose_level.dart';
 import 'package:rehab_hub/screens/pattern_main_menu.dart';
+import 'package:rehab_hub/screens/recommendation.dart';
 import 'package:rehab_hub/widgets/reminder_cards.dart';
 import 'screens/sliding_puzzle.dart'; // Import your game files
 
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
 
         'choose level': (context) => ChooseLevel(),
         '/pattern_recognition': (context) => MainMenu(),
+        '/recommendation': (context) => RecommendationPage(),
         // Add routes for other games
       },
     );
@@ -101,12 +103,16 @@ class HomePage extends StatelessWidget {
                                   fontSize: 20.0, fontWeight: FontWeight.bold),
                             ),
                             SizedBox(height: 16.0),
-IconButton( // Convert Icon to IconButton
-                                icon: Icon(Icons.alarm, size: 48.0, color: Colors.blue),
-                                onPressed: () {
-                                  Navigator.pushNamed(context, 'reminder'); // Navigate to the desired page
-                                },
-                              ),                          ],
+                            IconButton(
+                              // Convert Icon to IconButton
+                              icon: Icon(Icons.alarm,
+                                  size: 48.0, color: Colors.blue),
+                              onPressed: () {
+                                Navigator.pushNamed(context,
+                                    'reminder'); // Navigate to the desired page
+                              },
+                            ),
+                          ],
                         ),
                       ),
                       SizedBox(width: 16.0),
@@ -120,8 +126,13 @@ IconButton( // Convert Icon to IconButton
                                   fontSize: 20.0, fontWeight: FontWeight.bold),
                             ),
                             SizedBox(height: 16.0),
-                            Icon(Icons.thumb_up,
-                                size: 48.0, color: Colors.blue),
+                            IconButton(
+                              icon: Icon(Icons.thumb_up,
+                                  size: 48.0, color: Colors.blue),
+                              onPressed: () {
+                                Navigator.pushNamed(context,'/recommendation'); // 
+                              },
+                            )
                           ],
                         ),
                       ),

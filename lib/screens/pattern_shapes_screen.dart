@@ -72,7 +72,7 @@ class _QuizzScreenState extends State<ShapesScreen> {
     }
 
     return Scaffold(
-      backgroundColor: AppColor.pripmaryColor,
+      // backgroundColor: AppColor.pripmaryColor,
       body: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: screen_H * 0.02), // Adjusted padding
@@ -100,13 +100,14 @@ class _QuizzScreenState extends State<ShapesScreen> {
                     "Question ${index + 1}/10",
                     textAlign: TextAlign.start,
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppColor.pripmaryColor,
+                      fontWeight: FontWeight.bold,
                       fontSize: screen_H * 0.04, // Adjusted font size
                     ),
                   ),
                 ),
                 Divider(
-                  color: Colors.white,
+                  color: AppColor.secondaryColor,
                   height: screen_H * 0.02, // Adjusted divider height
                   thickness: 1.0,
                 ),
@@ -115,7 +116,8 @@ class _QuizzScreenState extends State<ShapesScreen> {
                   child: Text(
                     'What is the next pattern?',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppColor.pripmaryColor,
+                      fontWeight: FontWeight.bold,
                       fontSize: screen_H * 0.044, // Adjusted font size
                     ),
                   ),
@@ -184,6 +186,7 @@ class _QuizzScreenState extends State<ShapesScreen> {
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: screen_H * 0.033, // Adjusted font size
+                      
                     ),
                   ),
                 ),

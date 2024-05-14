@@ -15,7 +15,7 @@ class _MainMenuState extends State<MainMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.pripmaryColor,
+      // backgroundColor: AppColor.pripmaryColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(
           vertical: 48.0,
@@ -29,7 +29,7 @@ class _MainMenuState extends State<MainMenu> {
               child: Text(
                 "Pattern Recognition",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: AppColor.pripmaryColor,
                   fontSize: 48,
                   fontWeight: FontWeight.bold,
                 ),
